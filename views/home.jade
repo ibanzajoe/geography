@@ -1,0 +1,35 @@
+extends nLayout
+block content
+  .wrapper(style={width: '100%', background: 'grey', height: '600px'})
+    .left_container.col-md-3
+      ul.nav.nav-pills.nav-stacked
+        li.nav-header This Week in Geography
+        li
+          a(href='/home') This Week in Geography
+        li
+          a(href='/home/thisWeek') This Week
+        li
+          a(href='/home/archive') Archive
+        li
+          a(href='/home/about') About
+    .right_container.col-md-9
+      h1 content of the entry
+      h2 country name and general description
+      p=e.country
+      h2 map of country
+      img(src=e.maps)
+      h2 general demographics
+      p=e.general.demographics
+      h2 environment
+      p=e.environment.climate
+      p=e.environment.transportation
+      p=e.environment.waterCost
+      p=e.environment.disease
+      h2 business
+      p=e.business.realEstate
+      p=e.business.importExport
+      p=e.business.product
+      p=e.business.vacation
+      h2 images
+      each z in e.miscImages
+        img(src=z)

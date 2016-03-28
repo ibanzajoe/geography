@@ -1,0 +1,32 @@
+extends layout
+block content
+  form(method="GET" action="/user/editEntry")
+    input(type="hidden" name="_id" value=user._id)
+    .dashhead
+      .dashhead-titles
+        h6.dashhead-subtitle Edit Entry
+      .btn-toolbar.dashhead-toolbar
+        button.btn.btn-primary-outline Edit Entry
+        //
+          <div class="btn-toolbar-item input-with-icon">
+          <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+          <span class="icon icon-calendar"></span>
+          </div>
+    hr.m-t
+    table
+      tr
+        td ID
+        td Country
+        td Map
+        td general demographics
+        td Edit
+      for z in e
+        tr
+          td=z._id
+          td=z.country
+          td=z.maps
+          td=z.general.demographics
+          td
+            form(method='GET' action='/user/editEntry/#{z._id}')
+              input(type="submit")
+          br

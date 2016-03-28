@@ -1,0 +1,13 @@
+extends nLayout
+block content
+  .wrapper(style={width: '100%', background: 'grey', height: '600px'})
+    .left_container.col-md-3
+      ul.nav.nav-pills.nav-stacked
+        li.nav-header Archive
+        li Country
+        for z in e
+          li
+            a(href='/home/entry/#{z._id}')=z.country
+    .right_container.col-md-9
+      h1 content of the entry
+      

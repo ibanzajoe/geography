@@ -4,9 +4,10 @@ const app = require('./bootstrap'),
   models = require('./models'),
   passport = require('./config/passport')
 
-app.use('/', controllers.Home)
+app.use('/home', controllers.Home)
 app.use('/auth', controllers.Auth)
 app.use('/admin', passport.isAuthenticated, passport.isAdmin, controllers.Admin)
+app.use('/user', passport.isAuthenticated, controllers.User)
 
 app.get('/test', (req,res) => {
   res.send(req.query)

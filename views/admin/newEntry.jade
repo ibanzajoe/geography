@@ -1,0 +1,86 @@
+extends layout
+block content
+  form(method="POST" action="/user/saveEntry")
+    input(type="hidden" name="_id" value=user._id)
+    .dashhead
+      .dashhead-titles
+        h6.dashhead-subtitle New Entry
+        h2.dashhead-title Country
+      .btn-toolbar.dashhead-toolbar
+        button.btn.btn-primary-outline Save Entry
+        //
+          <div class="btn-toolbar-item input-with-icon">
+          <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+          <span class="icon icon-calendar"></span>
+          </div>
+    hr.m-t
+    section.content-header
+      #field_country.field.row
+        .col-md-12
+          .form-group
+            label Country
+            input.form-control(type="text" name="country" placeholder="country")
+          // /.form-group
+        // /.col
+      // /.row
+      #field_map.field.row
+        .col-md-12
+          .form-group
+            label Link to Map
+            input.form-control(type="text" name="maps" placeholder="Map")
+          // /.form-group
+      // /.row
+      #field_general.field.row
+        .col-md-12
+          .form-group
+            label General
+            label Demographics
+            input.form-control(type="text" name="demographics")
+            label Big City
+            input.form-control(type="text" name="bigCity")
+            label Biggest Industries
+            input.form-control(type="text" name="bigBusiness")
+          // /.form-group
+        // /.col
+      // /.row
+      #field_environment.field.row
+        .col-md-12
+          .form-group
+            label Environment
+            label Climate
+            input.form-control(type="text" name="climate" )
+            label Transportation
+            input.form-control(type="text" name="transportation")
+            label Cost of Water
+            input.form-control(type="text" name="waterCost")
+            label Endemic Disease
+            input.form-control(type="text" name="disease")
+          // /.form-group
+        // /.col
+      // /.row
+      #field_business.field.row
+        .col-md-12
+          .form-group
+            label Business
+            label Real Estate
+            input.form-control(type="text" name="realEstate" )
+            label Import Export
+            input.form-control(type="text" name="importExport")
+            label Notable product
+            input.form-control(type="text" name="production")
+            label vacation
+            input.form-control(type="text" name="vacation")
+          // /.form-group
+        // /.col
+      // /.row
+      #field_image.field.row
+        .col-md-12
+          .form-group
+            label Link to image
+            input.form-control(type="text" name="image1")
+            label Link to image 2
+            input.form-control(type="text" name="image2")
+            label Link to image 3
+            input.form-control(type="text" name="image3")
+          // /.form-group
+      // /.row

@@ -1,0 +1,82 @@
+extends layout
+block content
+  form(method="POST" action="/user/saveEntry")
+    input(type="hidden" name="_id" value=e._id)
+    .dashhead
+      .dashhead-titles
+        h6.dashhead-subtitle Edit Entry
+      .btn-toolbar.dashhead-toolbar
+        button.btn.btn-primary-outline Edit Entry
+        //
+          <div class="btn-toolbar-item input-with-icon">
+          <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+          <span class="icon icon-calendar"></span>
+          </div>
+    hr.m-t
+    section.content-header
+      #field_country.field.row
+        .col-md-12
+          .form-group
+            label Country
+            input.form-control(type="text" name="country" placeholder="country" value=e.country)
+          // /.form-group
+        // /.col
+      // /.row
+      #field_map.field.row
+        .col-md-12
+          .form-group
+            label Link to Map
+            input.form-control(type="text" name="maps" placeholder="Map" value=e.maps)
+          // /.form-group
+      // /.row
+      #field_general.field.row
+        .col-md-12
+          .form-group
+            label General
+            label Demographics
+            input.form-control(type="text" name="demographics" value=e.general.demographics)
+            label Big City
+            input.form-control(type="text" name="bigCity" value=e.general.bigCity)
+            label Biggest Industries
+            input.form-control(type="text" name="bigBusiness" value=e.general.bigBusiness)
+          // /.form-group
+        // /.col
+      // /.row
+      #field_environment.field.row
+        .col-md-12
+          .form-group
+            label Environment
+            label Climate
+            input.form-control(type="text" name="climate" value=e.environment.climate)
+            label Transportation
+            input.form-control(type="text" name="transportation" value=e.environment.transportation)
+            label Cost of Water
+            input.form-control(type="text" name="waterCost" value=e.environment.waterCost)
+            label Endemic Disease
+            input.form-control(type="text" name="disease" value=e.environment.disease)
+          // /.form-group
+        // /.col
+      // /.row
+      #field_business.field.row
+        .col-md-12
+          .form-group
+            label Business
+            label Real Estate
+            input.form-control(type="text" name="realEstate" value=e.business.realEstate)
+            label Import Export
+            input.form-control(type="text" name="importExport" value=e.business.importExport)
+            label Notable product
+            input.form-control(type="text" name="production" value=e.business.product)
+            label vacation
+            input.form-control(type="text" name="vacation" value=e.business.vacation)
+          // /.form-group
+        // /.col
+      // /.row
+      #field_image.field.row
+        .col-md-12
+          each z in e.miscImages
+            .form-group
+              label Link to image
+              input.form-control(type="text" name="image1" value=z)
+          // /.form-group
+      // /.row
